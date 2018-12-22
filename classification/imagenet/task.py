@@ -3,9 +3,14 @@ from __future__ import absolute_import
 import argparse
 import os
 import json
+import sys
 
 import cnn
 import tensorflow as tf
+
+tf.enable_eager_execution()
+print('eager mode: ', tf.executing_eagerly())
+
 
 def main():
     parser = argparse.ArgumentParser()
@@ -71,13 +76,13 @@ def main():
     output_dir = hparams.pop('output_dir')
     output_dir = os.path.join(
         output_dir,
-        joon.loads(
+        json.loads(
             os.environ.get('TF_CONFIG', '{}')
-        ).geet('task', {}).get('traial', '')
+        ).get('task', {}).get('traial', '')
     )
         
 
-    cnn.train_and_evauate(output_dir, hpramas)
+    cnn.train_and_evaluate(output_dir, hparams)
         
     
 
