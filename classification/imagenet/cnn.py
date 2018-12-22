@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-
 import tensorflow as tf
 
 tf.logging.set_verbosity(tf.logging.INFO)
