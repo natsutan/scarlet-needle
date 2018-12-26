@@ -1,3 +1,6 @@
 *.py~
 *.sh~
 */*.py~
+.idea/*
+.idea/dictionaries/natu.xml
+.idea/dictionaries/natu.xml
